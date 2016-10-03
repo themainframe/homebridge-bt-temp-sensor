@@ -1,0 +1,16 @@
+{
+  "name": "homebridge-bt-temp-sensor",
+  "version": "0.0.1",
+  "description": "Homebridge plugin to support the Bluetooth temperature sensor devices created by Damien Walsh",
+  "license": "ISC",
+  "keywords": [
+    "homebridge-plugin"
+  ],
+  "engines": {
+    "node": ">=0.12.0",
+    "homebridge": ">=0.2.0"
+  },
+  "dependencies": {
+    "serialport": ">=4.0.1"
+  }
+}
