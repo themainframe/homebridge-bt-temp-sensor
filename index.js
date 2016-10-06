@@ -30,6 +30,14 @@ function BluetoothTempSensor(log, config) {
     parser: SerialPort.parsers.readline('\n')
   });
 
+  // If the port is ever closed, try to reopen it
+  setInterval((function () {
+	  if (!this.port.readable) {
+	    acc.log('serial port is closed, reopening...');
+	    this.port.open();
+	  }
+  }).bind(this), 1000);
+
   // When the port receives data, parse the JSON if we can extract the temperature
   this.port.on('data', function (data) {
     try {
